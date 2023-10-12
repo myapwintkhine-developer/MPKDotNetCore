@@ -16,7 +16,9 @@ namespace MPKDotNetCore.ConsoleApp.DapperExamples
             DataSource = "DESKTOP-F0KQS1A", //server name (local)
             InitialCatalog = "TestDb",
             UserID = "sa", //user name
-            Password = "sasa" //password
+            Password = "sasa", //password
+            Encrypt = true, // Enable SSL encryption
+            TrustServerCertificate = true // Validate the server certificate
         };
 
         public void Run()

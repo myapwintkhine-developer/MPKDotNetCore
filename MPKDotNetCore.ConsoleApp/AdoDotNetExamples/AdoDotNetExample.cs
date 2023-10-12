@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace MPKDotNetCore.ConsoleApp.AODDotNetExamples
+namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
 {
     public class AdoDotNetExample
     {
@@ -13,20 +13,22 @@ namespace MPKDotNetCore.ConsoleApp.AODDotNetExamples
             DataSource = "DESKTOP-F0KQS1A", //server name (local)
             InitialCatalog = "TestDb",
             UserID = "sa", //user name
-            Password = "sasa" //password
+            Password = "sasa", //password
+            Encrypt = true, // Enable SSL encryption
+            TrustServerCertificate = true // Validate the server certificate
         };
 
         public void Run()
         {
             Read();
-            Create("title1", "author1", "content1");
+            Create("title5", "author5", "content5");
             Create("Hard Times", "Charles Dickens", "Slice of Life");
             Edit(2);
-            Update(2, "title2", "author2", "content2");
+            Update(2, "title6", "author6", "content6");
             Delete(1);
         }
 
-        public void Read()
+        private void Read()
         {
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
@@ -49,7 +51,7 @@ namespace MPKDotNetCore.ConsoleApp.AODDotNetExamples
 
         }
 
-        public void Edit(int id)
+        private void Edit(int id)
         {
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
@@ -95,7 +97,7 @@ namespace MPKDotNetCore.ConsoleApp.AODDotNetExamples
 
         }
 
-        public void Update(int id, string title, string author, string content)
+        private void Update(int id, string title, string author, string content)
         {
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
@@ -115,7 +117,7 @@ namespace MPKDotNetCore.ConsoleApp.AODDotNetExamples
             Console.WriteLine(message);
         }
 
-        public void Delete(int id)
+        private void Delete(int id)
         {
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
