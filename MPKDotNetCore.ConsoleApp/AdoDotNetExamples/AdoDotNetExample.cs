@@ -25,7 +25,6 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
             Create("Hard Times", "Charles Dickens", "Slice of Life");
             Edit(2);
             Update(2, "title6", "author6", "content6");
-            Delete(1);
         }
 
         private void Read()
