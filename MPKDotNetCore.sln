@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.ConsoleApp", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppTest", "WindowsFormsAppTest\WindowsFormsAppTest.csproj", "{E9A3A149-D787-4DB6-BF12-41FD0EB8A954}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.RestApi", "MPKDotNetCore.RestApi\MPKDotNetCore.RestApi.csproj", "{B18C01EF-FEAF-4F43-B590-490040A7F06B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.MvcApp", "MvcApp\MPKDotNetCore.MvcApp.csproj", "{04B7B5DF-8C89-4C71-9291-640EDBFFC27D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.MinimalApi", "MPKDotNetCore.MinimalApi\MPKDotNetCore.MinimalApi.csproj", "{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{E9A3A149-D787-4DB6-BF12-41FD0EB8A954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9A3A149-D787-4DB6-BF12-41FD0EB8A954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9A3A149-D787-4DB6-BF12-41FD0EB8A954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B18C01EF-FEAF-4F43-B590-490040A7F06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B18C01EF-FEAF-4F43-B590-490040A7F06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B18C01EF-FEAF-4F43-B590-490040A7F06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B18C01EF-FEAF-4F43-B590-490040A7F06B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04B7B5DF-8C89-4C71-9291-640EDBFFC27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B7B5DF-8C89-4C71-9291-640EDBFFC27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B7B5DF-8C89-4C71-9291-640EDBFFC27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B7B5DF-8C89-4C71-9291-640EDBFFC27D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
