@@ -5,13 +5,13 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.ConsoleApp", "MPKDotNetCore.ConsoleApp\MPKDotNetCore.ConsoleApp.csproj", "{27CBDAAE-5571-4048-9C87-587F16504ED3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppTest", "WindowsFormsAppTest\WindowsFormsAppTest.csproj", "{E9A3A149-D787-4DB6-BF12-41FD0EB8A954}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.WindowsFormsAppTest", "WindowsFormsAppTest\MPKDotNetCore.WindowsFormsAppTest.csproj", "{E9A3A149-D787-4DB6-BF12-41FD0EB8A954}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.RestApi", "MPKDotNetCore.RestApi\MPKDotNetCore.RestApi.csproj", "{B18C01EF-FEAF-4F43-B590-490040A7F06B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.MvcApp", "MvcApp\MPKDotNetCore.MvcApp.csproj", "{04B7B5DF-8C89-4C71-9291-640EDBFFC27D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.MinimalApi", "MPKDotNetCore.MinimalApi\MPKDotNetCore.MinimalApi.csproj", "{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.MinimalApi", "MPKDotNetCore.MinimalApi\MPKDotNetCore.MinimalApi.csproj", "{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.MvcApp", "MPKDotNetCore.MvcApp\MPKDotNetCore.MvcApp.csproj", "{FE40574F-818E-4318-9BD9-EB78A502E4E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{B18C01EF-FEAF-4F43-B590-490040A7F06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B18C01EF-FEAF-4F43-B590-490040A7F06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B18C01EF-FEAF-4F43-B590-490040A7F06B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04B7B5DF-8C89-4C71-9291-640EDBFFC27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04B7B5DF-8C89-4C71-9291-640EDBFFC27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04B7B5DF-8C89-4C71-9291-640EDBFFC27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04B7B5DF-8C89-4C71-9291-640EDBFFC27D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAF4C1BA-69CD-417C-B23F-C7C25843E7B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE40574F-818E-4318-9BD9-EB78A502E4E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE40574F-818E-4318-9BD9-EB78A502E4E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE40574F-818E-4318-9BD9-EB78A502E4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE40574F-818E-4318-9BD9-EB78A502E4E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

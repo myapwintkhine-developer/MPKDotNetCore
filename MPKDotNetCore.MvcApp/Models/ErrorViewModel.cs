@@ -1,4 +1,4 @@
-namespace MvcApp.Models
+namespace MPKDotNetCore.MvcApp.Models
 {
     public class ErrorViewModel
     {
