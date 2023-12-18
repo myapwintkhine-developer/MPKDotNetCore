@@ -1,48 +1,61 @@
-﻿﻿@model BlogListResponseModel
+﻿@model BlogDataResponseModel
 @{
-    int rowCount = 0;
+    // Layout = "_MainLayout";
+    // Layout = "_Layout";
+    ViewData["Title"] = "Blog Index";
+    string message = null;
+    bool isSuccess = false;
+    if (TempData["Message"] != null)
+    {
+        message = TempData["Message"].ToString();
+        isSuccess = Convert.ToBoolean(TempData["IsSuccess"]);
+    }
+    int pageNo = Model.PageSetting.PageNo;
+    int pageSize = Model.PageSetting.PageSize;
+    int pageCount = Model.PageSetting.PageCount;
+    int count = (pageNo - 1) * pageSize;
+    string url = Model.PageSetting.PageUrl;
+}
+<h4>
+    <a href="/blog/create" class="btn btn-success">
+        <i class="fa fa-plus"></i>
+    </a>
+    Blog List
+</h4>
+
+@if (message is not null)
+{
+    <div class="alert alert-@(isSuccess ? "success" : "danger")" role="alert">
+        @message
+    </div>
 }
 
-@* @if (TempData["IsSuccess"] != null)
-{
-    bool isSuccess = Convert.ToBoolean(TempData["IsSuccess"]);
-    if (isSuccess)
-    {
-        <div class="alert alert-success" role="alert">
-            @TempData["Message"]
-        </div>
-    }
-    else
-    {
-        <div class="alert alert-danger" role="alert">
-            @TempData["Message"]
-        </div>
-    }
-} *@
 
-<partial name="_ValidateMessage" />
-<p>Page Count : @Model.PageCount</p>
-<p>Page Row Count : @Model.PageRowCount</p>
+@* <p>hello world</p> *@
+
 <table class="table">
     <thead>
         <tr>
-            <th>Action</th>
-            <th scope="col">No.</th>
+            <th></th>
+            <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Author</th>
             <th scope="col">Content</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (BlogDataModel item in Model.BlogList)
+        @foreach (var item in Model.Blogs)
         {
             <tr>
                 <td>
-                    <a href="/Blog/Edit/@item.Blog_Id" class="btn btn-warning">Edit</a>
-                    <a href="/Blog/Delete/@item.Blog_Id" class="btn btn-warning">Delete</a>
-                    @* <a href="/Blog/Edit?blogId=@item.Blog_Id" class="btn btn-warning">Edit</a> *@
+                    <a class="btn btn-warning" href="/blog/edit/@item.Blog_Id">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <a class="btn btn-danger" href="/blog/delete/@item.Blog_Id">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
                 </td>
-                <th scope="row">@(++rowCount)</th>
+                <th scope="row">@(++count)</th>
                 <td>@item.Blog_Title</td>
                 <td>@item.Blog_Author</td>
                 <td>@item.Blog_Content</td>
@@ -50,3 +63,9 @@
         }
     </tbody>
 </table>
+@await Html.PartialAsync("_Pagination", Model.PageSetting)
+@section scripts {
+    <script>
+        console.log('test');
+    </script>
+}

@@ -1,25 +1,4 @@
-﻿﻿<h4>Blog</h4>
-
-@* @if (TempData["IsSuccess"] != null)
-{
-    bool isSuccess = Convert.ToBoolean(TempData["IsSuccess"]);
-    if (isSuccess)
-    {
-        <div class="alert alert-success" role="alert">
-            @TempData["Message"]
-        </div>
-    }
-    else
-    {
-        <div class="alert alert-danger" role="alert">
-            @TempData["Message"]
-        </div>
-    }
-} *@
-
-<partial name="_ValidateMessage" />
-
-<form method="post" action="/Blog/Save">
+﻿<form action="/blog/save" method="post">
     <div class="mb-3">
         <label class="form-label">Title</label>
         <input type="text" name="Blog_Title" class="form-control">
@@ -32,11 +11,6 @@
         <label class="form-label">Content</label>
         <input type="text" name="Blog_Content" class="form-control">
     </div>
-    <button type="button" class="btn btn-secondary">Back</button>
+    <a href="/blog" class="btn btn-secondary">Cancel</a>
     <button type="submit" class="btn btn-success">Save</button>
 </form>
-@section scripts {
-    <script>
-        // alert();
-    </script>
-}

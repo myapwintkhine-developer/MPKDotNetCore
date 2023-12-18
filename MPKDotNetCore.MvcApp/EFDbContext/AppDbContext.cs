@@ -1,12 +1,13 @@
-﻿using AHMTZDotNetCore.MvcApp.Models;
+﻿using MPKDotNetCore.MvcApp.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Text;
-using Microsoft.Data.SqlClient;
+using System.Threading.Tasks;
 
-namespace AHMTZDotNetCore.MvcApp
+namespace MPKDotNetCore.MvcApp.EFDbContext
 {
     public class AppDbContext : DbContext
     {
