@@ -59,7 +59,7 @@ namespace MPKDotNetCore.MvcApp.Controllers
         [ActionName("Edit")]
         public async Task<IActionResult> BlogEdit(int id)
         {
-            var blog = await _context.Blogs.AsNoTracking().FirstOrDefaultAsync(x => x.Blog_Id == id);
+            var blog = await _context.Blogs.FirstOrDefaultAsync(x => x.Blog_Id == id);
             if (blog is null)
             {
                 TempData["Message"] = "No data found.";
@@ -73,7 +73,7 @@ namespace MPKDotNetCore.MvcApp.Controllers
         [ActionName("Update")]
         public async Task<IActionResult> BlogUpdate(int id, BlogDataModel reqModel)
         {
-            var blog = await _context.Blogs.AsNoTracking().FirstOrDefaultAsync(x => x.Blog_Id == id);
+            var blog = await _context.Blogs.FirstOrDefaultAsync(x => x.Blog_Id == id);
 
             if (blog != null)
             {

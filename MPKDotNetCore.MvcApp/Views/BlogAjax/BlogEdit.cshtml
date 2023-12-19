@@ -28,6 +28,22 @@
         $('#btnUpdate').click(function (e) {
             e.preventDefault();
 
+
+            if ($('#Blog_Title').val() == null || $('#Blog_Title').val() == "" || $('#Blog_Title').val() == undefined) {
+                validateMsg("Title can't be empty!");
+                return;
+            }
+
+            if ($('#Blog_Author').val() == null || $('#Blog_Author').val() == "" || $('#Blog_Author').val() == undefined) {
+                validateMsg("Author can't be empty!");
+                return;
+            }
+
+            if ($('#Blog_Content').val() == null || $('#Blog_Content').val() == "" || $('#Blog_Content').val() == undefined) {
+                validateMsg("Content can't be empty!");
+                return;
+            }
+
             var l = Ladda.create(this);
             l.start();
 

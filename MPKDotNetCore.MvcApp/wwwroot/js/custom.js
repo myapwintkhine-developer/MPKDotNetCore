@@ -57,3 +57,8 @@ function showMessage(data, url) {
         errorMessage(data.message);
     }
 }
+
+function validateMsg(message) {
+    Notiflix.Notify.warning(message);
+}
+
