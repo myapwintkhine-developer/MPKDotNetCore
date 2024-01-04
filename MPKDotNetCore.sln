@@ -15,7 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.WindowsFormsA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.ThemeMvcApp", "MPKDotNetCore.ThemeMvcApp\MPKDotNetCore.ThemeMvcApp.csproj", "{2BCAF85D-86E5-4FF7-84A0-63A876EEE3D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.ATMWebApp", "MPKDotNetCore.ATMWebApp\MPKDotNetCore.ATMWebApp.csproj", "{6266E6DB-1BA5-47E9-B3F7-BCFF986CBA1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.ATMWebApp", "MPKDotNetCore.ATMWebApp\MPKDotNetCore.ATMWebApp.csproj", "{6266E6DB-1BA5-47E9-B3F7-BCFF986CBA1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.LoginWebApp", "MPKDotNetCore.LoginWebApp\MPKDotNetCore.LoginWebApp.csproj", "{0A2E3097-369F-48C5-9C03-09B0CCA2475B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{6266E6DB-1BA5-47E9-B3F7-BCFF986CBA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6266E6DB-1BA5-47E9-B3F7-BCFF986CBA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6266E6DB-1BA5-47E9-B3F7-BCFF986CBA1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A2E3097-369F-48C5-9C03-09B0CCA2475B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2E3097-369F-48C5-9C03-09B0CCA2475B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2E3097-369F-48C5-9C03-09B0CCA2475B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2E3097-369F-48C5-9C03-09B0CCA2475B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
