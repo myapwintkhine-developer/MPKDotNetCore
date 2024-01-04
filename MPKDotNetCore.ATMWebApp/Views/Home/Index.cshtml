@@ -1,0 +1,123 @@
+﻿@model Account
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @if (Model.Name != null)
+    {
+        <h1 class="display-4">Welcome @Model.Name</h1>
+    }
+    @if (Model.Name == null)
+    {
+        <h1 class="display-4">Welcome</h1>
+    }
+
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signinModalLabel" style="font-weight:bold">Sign In</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="registration-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="number" class="form-control item" id="txtAccountNo" placeholder="Account No">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control item" id="txtPin" placeholder="Pin">
+                            </div>
+                            <div class="form-group" style="text-align:center;display:inline-block">
+                                <button type="button" class="btn btn-secondary" onclick="closeSignin()">Close</button>
+                                <button type="button" class="btn btn-primary" id="btnSignin">Sign In</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel" style="font-weight:bold">Register</h5>
+                </div>
+                <div class="modal-body">
+
+                    <div class="registration-form">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control item" id="txtAddName" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control item" id="txtAddPhone" placeholder="Phone">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control item" id="txtAddNRCNo" placeholder="NRC No">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control item" id="txtAddPin" placeholder="Pin">
+                            </div>
+                            <div class="form-group" style="text-align:center;display:inline-block">
+                                <button type="button" class="btn btn-secondary" onclick="closeRegister()">Close</button>
+                                <button type="button" class="btn btn-primary" id="btnRegister">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="depositModal" tabindex="-1" role="dialog" aria-labelledby="depositModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="depositModalLabel" style="font-weight:bold">Deposit</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control item" id="txtDeposit" placeholder="Deposit Amount">
+                        </div>
+                        <div class="form-group" style="text-align:center;display:inline-block">
+                            <button type="button" class="btn btn-secondary" onclick="closeDeposit()">Close</button>
+                            <button type="button" class="btn btn-primary" id="btnDeposit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="withdrawModal" tabindex="-1" role="dialog" aria-labelledby="withdrawModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="depositModalLabel">Withdraw</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control item" id="txtWithdraw" placeholder="Withdraw Amount">
+                        </div>
+                        <div class="form-group" style="text-align:center;display:inline-block">
+                            <button type="button" class="btn btn-secondary" onclick="closeWithdraw()">Close</button>
+                            <button type="button" class="btn btn-primary" id="btnWithdraw">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section scripts {
+    <script src="~/js/script.js"></script>
+    <script src="~/js/home.js"></script>
+    <script src="~/js/custom.js"></script>
+}
