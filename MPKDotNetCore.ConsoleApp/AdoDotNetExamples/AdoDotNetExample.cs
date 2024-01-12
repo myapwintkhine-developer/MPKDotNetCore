@@ -32,7 +32,7 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
 
-            string query = "Select * from Blog";
+            string query = "Select * from Tbl_Blog";
             SqlCommand cmd = new SqlCommand(query, connection);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -42,10 +42,10 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
 
             foreach (DataRow dr in dt.Rows)
             {
-                Console.WriteLine($"Blog Id => {dr["BlogId"].ToString()}");
-                Console.WriteLine($"Blog Title => {dr["BlogTitle"].ToString()}");
-                Console.WriteLine($"Blog Author => {dr["BlogAuthor"].ToString()}");
-                Console.WriteLine($"Blog Content => {dr["BlogContent"].ToString()}");
+                Console.WriteLine($"Blog Id => {dr["Blog_Id"].ToString()}");
+                Console.WriteLine($"Blog Title => {dr["Blog_Title"].ToString()}");
+                Console.WriteLine($"Blog Author => {dr["Blog_Author"].ToString()}");
+                Console.WriteLine($"Blog Content => {dr["Blog_Content"].ToString()}");
             }
 
         }
@@ -55,9 +55,9 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
 
-            string query = "Select * from Blog Where BlogId=@BlogId";
+            string query = "Select * from Tbl_Blog Where Blog_Id=@Blog_Id";
             SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@BlogId", id);
+            cmd.Parameters.AddWithValue("@Blog_Id", id);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -71,10 +71,10 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
             }
 
             DataRow dr = dt.Rows[0];
-            Console.WriteLine($"Blog Id => {dr["BlogId"].ToString()}");
-            Console.WriteLine($"Blog Title => {dr["BlogTitle"].ToString()}");
-            Console.WriteLine($"Blog Author => {dr["BlogAuthor"].ToString()}");
-            Console.WriteLine($"Blog Content => {dr["BlogContent"].ToString()}");
+            Console.WriteLine($"Blog Id => {dr["Blog_Id"].ToString()}");
+            Console.WriteLine($"Blog Title => {dr["Blog_Title"].ToString()}");
+            Console.WriteLine($"Blog Author => {dr["Blog_Author"].ToString()}");
+            Console.WriteLine($"Blog Content => {dr["Blog_Content"].ToString()}");
 
         }
 
@@ -83,11 +83,11 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
 
-            string query = @"INSERT INTO [dbo].[Blog] ([BlogTitle],[BlogAuthor],[BlogContent]) VALUES(@BlogTitle,@BlogAuthor,@BlogContent)";
+            string query = @"INSERT INTO [dbo].[Tbl_Blog] ([Blog_Title],[Blog_Author],[Blog_Content]) VALUES(@Blog_Title,@Blog_Author,@Blog_Content)";
             SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@BlogTitle", title);
-            cmd.Parameters.AddWithValue("@BlogAuthor", author);
-            cmd.Parameters.AddWithValue("@BlogContent", content);
+            cmd.Parameters.AddWithValue("@Blog_Title", title);
+            cmd.Parameters.AddWithValue("@Blog_Author", author);
+            cmd.Parameters.AddWithValue("@Blog_Content", content);
             int result = cmd.ExecuteNonQuery();
 
             connection.Close();
@@ -101,12 +101,12 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
 
-            string query = @"Update [dbo].[Blog] Set [BlogTitle]=@BlogTitle, [BlogAuthor]=@BlogAuthor, [BlogContent]=@BlogContent Where BlogId=@BlogId";
+            string query = @"Update [dbo].[Tbl_Blog] Set [Blog_Title]=@Blog_Title, [Blog_Author]=@Blog_Author, [Blog_Content]=@Blog_Content Where Blog_Id=@Blog_Id";
             SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@BlogId", id);
-            cmd.Parameters.AddWithValue("@BlogTitle", title);
-            cmd.Parameters.AddWithValue("@BlogAuthor", author);
-            cmd.Parameters.AddWithValue("@BlogContent", content);
+            cmd.Parameters.AddWithValue("@Blog_Id", id);
+            cmd.Parameters.AddWithValue("@Blog_Title", title);
+            cmd.Parameters.AddWithValue("@Blog_Author", author);
+            cmd.Parameters.AddWithValue("@Blog_Content", content);
 
             int result = cmd.ExecuteNonQuery();
 
@@ -121,9 +121,9 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
             SqlConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
 
-            string query = @"Delete From [dbo].[Blog] Where BlogId=@BlogId";
+            string query = @"Delete From [dbo].[Tbl_Blog] Where Blog_Id=@Blog_Id";
             SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@BlogId", id);
+            cmd.Parameters.AddWithValue("@Blog_Id", id);
 
             int result = cmd.ExecuteNonQuery();
 

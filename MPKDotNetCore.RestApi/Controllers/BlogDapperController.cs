@@ -42,14 +42,14 @@ namespace MPKDotNetCore.RestApi.Controllers
         [HttpPost]
         public IActionResult CreateBlog([FromBody] BlogDataModel blog)
         {
-            string query = $@"INSERT INTO [dbo].[Blog]
-           ([BlogTitle]
-           ,[BlogAuthor]
-           ,[BlogContent])
+            string query = $@"INSERT INTO [dbo].[Tbl_Blog]
+           ([Blog_Title]
+           ,[Blog_Author]
+           ,[Blog_Content])
      VALUES
-           (@BlogTitle
-           ,@BlogAuthor
-           ,@BlogContent)";
+           (@Blog_Title
+           ,@Blog_Author
+           ,@Blog_Content)";
 
             using IDbConnection db = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             var result = db.Execute(query, blog);

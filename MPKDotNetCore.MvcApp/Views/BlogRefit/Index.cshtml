@@ -1,0 +1,46 @@
+﻿@model BlogListResponseModel
+@{
+    int count = 0;
+    string controller = "";
+    if (TempData["Controller"] != null)
+    {
+        controller = TempData["Controller"].ToString();
+    }
+}
+<h4>
+    <a href="/@controller/create" class="btn btn-success">
+        <i class="fa fa-plus"></i>
+    </a>
+    Blog List
+</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Data)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-warning" href="/@controller/edit/@item.Blog_Id">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <a class="btn btn-danger" href="/@controller/delete/@item.Blog_Id">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </td>
+                <th scope="row">@(++count)</th>
+                <td>@item.Blog_Title</td>
+                <td>@item.Blog_Author</td>
+                <td>@item.Blog_Content</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

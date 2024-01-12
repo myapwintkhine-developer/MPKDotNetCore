@@ -37,10 +37,10 @@ namespace MPKDotNetCore.ConsoleApp.DapperExamples
             List<BlogDataModel> lst = db.Query<BlogDataModel>(query).ToList();
             foreach (var item in lst)
             {
-                Console.WriteLine(item.BlogId);
-                Console.WriteLine(item.BlogTitle);
-                Console.WriteLine(item.BlogAuthor);
-                Console.WriteLine(item.BlogContent);
+                Console.WriteLine(item.Blog_Id);
+                Console.WriteLine(item.Blog_Title);
+                Console.WriteLine(item.Blog_Author);
+                Console.WriteLine(item.Blog_Content);
             }
         }
 
@@ -50,7 +50,7 @@ namespace MPKDotNetCore.ConsoleApp.DapperExamples
 
             BlogDataModel blog = new BlogDataModel()
             {
-                BlogId = id
+                Blog_Id = id
             };
             IDbConnection db = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
             BlogDataModel item = db.Query<BlogDataModel>(query, blog).FirstOrDefault();
@@ -62,30 +62,30 @@ namespace MPKDotNetCore.ConsoleApp.DapperExamples
                 return;
             }
 
-            Console.WriteLine(item.BlogId);
-            Console.WriteLine(item.BlogTitle);
-            Console.WriteLine(item.BlogAuthor);
-            Console.WriteLine(item.BlogContent);
+            Console.WriteLine(item.Blog_Id);
+            Console.WriteLine(item.Blog_Title);
+            Console.WriteLine(item.Blog_Author);
+            Console.WriteLine(item.Blog_Content);
         }
 
     
 
     private void Create(string title, string author, string content)
     {
-        string query = $@"INSERT INTO [dbo].[Blog]
-           ([BlogTitle]
-           ,[BlogAuthor]
-           ,[BlogContent])
+        string query = $@"INSERT INTO [dbo].[Tbl_Blog]
+           ([Blog_Title]
+           ,[Blog_Author]
+           ,[Blog_Content])
      VALUES
-           (@BlogTitle
-           ,@BlogAuthor
-           ,@BlogContent)";
+           (@Blog_Title
+           ,@Blog_Author
+           ,@Blog_Content)";
 
         BlogDataModel blog = new BlogDataModel()
         {
-            BlogAuthor = author,
-            BlogContent = content,
-            BlogTitle = title,
+            Blog_Author = author,
+            Blog_Content = content,
+            Blog_Title = title,
         };
 
         using IDbConnection db = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
@@ -99,10 +99,10 @@ namespace MPKDotNetCore.ConsoleApp.DapperExamples
     public void Delete(int id)
         {
             IDbConnection connection = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);
-            string query = @"Delete From [dbo].[Blog] Where BlogId=@BlogId";
+            string query = @"Delete From [dbo].[Tbl_Blog] Where Blog_Id=@Blog_Id";
             int result = connection.Execute(query, new BlogDataModel
             {
-                BlogId = id
+                Blog_Id = id
             });
 
             string message = result > 0 ? "Delete successful" : "Delete error";
@@ -111,14 +111,14 @@ namespace MPKDotNetCore.ConsoleApp.DapperExamples
 
         private void Update(int id,string title, string author, string content)
         {
-            string query = $@"Update [dbo].[Blog] Set [BlogTitle]=@BlogTitle, [BlogAuthor]=@BlogAuthor, [BlogContent]=@BlogContent Where BlogId=@BlogId";
+            string query = $@"Update [dbo].[Tbl_Blog] Set [Blog_Title]=@Blog_Title, [Blog_Author]=@Blog_Author, [Blog_Content]=@Blog_Content Where Blog_Id=@Blog_Id";
 
             BlogDataModel blog = new BlogDataModel()
             {
-                BlogId = id,
-                BlogAuthor = author,
-                BlogContent = content,
-                BlogTitle = title,
+                Blog_Id = id,
+                Blog_Author = author,
+                Blog_Content = content,
+                Blog_Title = title,
             };
 
             using IDbConnection db = new SqlConnection(sqlConnectionStringBuilder.ConnectionString);

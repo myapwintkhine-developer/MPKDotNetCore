@@ -21,6 +21,11 @@ namespace MPKDotNetCore.ConsoleApp.RefitExamples
         public async Task Run()
         {
             await Read();
+            await Create("title", "author", "content");
+            await Edit(1);
+            await Update(1, "title test", "author test", "content test");
+            await Delete(1);
+            await Patch(2, "title2", "author2", "content2");
         }
 
         private async Task Read()
@@ -34,9 +39,9 @@ namespace MPKDotNetCore.ConsoleApp.RefitExamples
         {
             BlogResponseModel model = await blogApi.CreateBlog(new BlogDataModel
             {
-                BlogTitle = title,
-                BlogAuthor = author,
-                BlogContent = content,
+                Blog_Title = title,
+                Blog_Author = author,
+                Blog_Content = content,
             });
             Console.WriteLine(JsonConvert.SerializeObject(model, Formatting.Indented));
         }
@@ -52,9 +57,9 @@ namespace MPKDotNetCore.ConsoleApp.RefitExamples
         {
             BlogResponseModel model = await blogApi.UpdateBlog(id, new BlogDataModel()
             {
-                BlogTitle = title,
-                BlogAuthor = author,
-                BlogContent = content,
+                Blog_Title = title,
+                Blog_Author = author,
+                Blog_Content = content,
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(model, Formatting.Indented));
@@ -71,9 +76,9 @@ namespace MPKDotNetCore.ConsoleApp.RefitExamples
         {
             BlogResponseModel model = await blogApi.PatchBlog(id, new BlogDataModel()
             {
-                BlogTitle = title,
-                BlogAuthor = author,
-                BlogContent = content,
+                Blog_Title = title,
+                Blog_Author = author,
+                Blog_Content = content,
             });
 
             Console.WriteLine(JsonConvert.SerializeObject(model, Formatting.Indented));

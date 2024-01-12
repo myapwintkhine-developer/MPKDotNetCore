@@ -29,7 +29,7 @@ namespace MPKDotNetCore.RestApi.Controllers
         {
             AppDbContext db = new AppDbContext();
             BlogResponseModel model = new BlogResponseModel();
-            var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
+            var item = db.Blogs.FirstOrDefault(x => x.Blog_Id == id);
             if(item is null)
             {
                 model.IsSuccess = false;
@@ -61,7 +61,7 @@ namespace MPKDotNetCore.RestApi.Controllers
         {
             BlogResponseModel model=new BlogResponseModel();
             AppDbContext db = new AppDbContext();
-            var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
+            var item = db.Blogs.FirstOrDefault(x => x.Blog_Id == id);
             if(item is null)
             {
                 model.IsSuccess = false;
@@ -69,9 +69,9 @@ namespace MPKDotNetCore.RestApi.Controllers
                 return NotFound(model);
             }
 
-            item.BlogTitle = blog.BlogTitle;
-            item.BlogAuthor = blog.BlogAuthor;
-            item.BlogContent = blog.BlogContent;
+            item.Blog_Title = blog.Blog_Title;
+            item.Blog_Author = blog.Blog_Author;
+            item.Blog_Content = blog.Blog_Content;
 
             var result=db.SaveChanges();
             string message = result > 0 ? "Update success" : "Update fail";
@@ -90,7 +90,7 @@ namespace MPKDotNetCore.RestApi.Controllers
         {
             BlogResponseModel model = new BlogResponseModel();
             AppDbContext db = new AppDbContext();
-            var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
+            var item = db.Blogs.FirstOrDefault(x => x.Blog_Id == id);
             if (item is null)
             {
                 model.IsSuccess = false;
@@ -98,9 +98,9 @@ namespace MPKDotNetCore.RestApi.Controllers
                 return NotFound(model);
             }
 
-            item.BlogTitle = blog.BlogTitle;
-            item.BlogAuthor = blog.BlogAuthor;
-            item.BlogContent = blog.BlogContent;
+            item.Blog_Title = blog.Blog_Title;
+            item.Blog_Author = blog.Blog_Author;
+            item.Blog_Content = blog.Blog_Content;
 
             var result = db.SaveChanges();
             string message = result > 0 ? "Update success" : "Update fail";
@@ -119,7 +119,7 @@ namespace MPKDotNetCore.RestApi.Controllers
         {
             BlogResponseModel model = new BlogResponseModel();
             AppDbContext db = new AppDbContext();
-            var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
+            var item = db.Blogs.FirstOrDefault(x => x.Blog_Id == id);
 
             if (item is null)
             {

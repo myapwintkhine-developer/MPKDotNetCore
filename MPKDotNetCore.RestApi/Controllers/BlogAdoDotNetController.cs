@@ -23,7 +23,7 @@ namespace MPKDotNetCore.RestApi.Controllers
         [HttpGet]
         public IActionResult GetBlogs()
         {
-            string query = "select * from Blog";
+            string query = "select * from Tbl_Blog";
 
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
@@ -40,10 +40,10 @@ namespace MPKDotNetCore.RestApi.Controllers
             {
                 BlogDataModel item = new BlogDataModel
                 {
-                    BlogId = Convert.ToInt32(dr["BlogId"]),
-                    BlogTitle = dr["BlogTitle"].ToString(),
-                    BlogAuthor = dr["BlogAuthor"].ToString(),
-                    BlogContent = dr["BlogContent"].ToString(),
+                    Blog_Id = Convert.ToInt32(dr["Blog_Id"]),
+                    Blog_Title = dr["Blog_Title"].ToString(),
+                    Blog_Author = dr["Blog_Author"].ToString(),
+                    Blog_Content = dr["Blog_Content"].ToString(),
                 };
                 lst.Add(item);
             }
@@ -61,23 +61,23 @@ namespace MPKDotNetCore.RestApi.Controllers
         [HttpPost]
         public IActionResult CreateBlog([FromBody] BlogDataModel blog)
         {
-            string query = $@"INSERT INTO [dbo].[Blog]
-           ([BlogTitle]
-           ,[BlogAuthor]
-           ,[BlogContent])
+            string query = $@"INSERT INTO [dbo].[Tbl_Blog]
+           ([Blog_Title]
+           ,[Blog_Author]
+           ,[Blog_Content])
      VALUES
-           (@BlogTitle
-           ,@BlogAuthor
-           ,@BlogContent)
+           (@Blog_Title
+           ,@Blog_Author
+           ,@Blog_Content)
             ";
 
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
 
             SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@BlogTitle", blog.BlogTitle);
-            cmd.Parameters.AddWithValue("@BlogAuthor", blog.BlogAuthor);
-            cmd.Parameters.AddWithValue("@BlogContent", blog.BlogContent);
+            cmd.Parameters.AddWithValue("@Blog_Title", blog.Blog_Title);
+            cmd.Parameters.AddWithValue("@Blog_Author", blog.Blog_Author);
+            cmd.Parameters.AddWithValue("@Blog_Content", blog.Blog_Content);
             int result = cmd.ExecuteNonQuery();
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
 

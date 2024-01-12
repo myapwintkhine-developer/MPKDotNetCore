@@ -2,6 +2,8 @@
 using MPKDotNetCore.ConsoleApp.DapperExamples;
 using MPKDotNetCore.ConsoleApp.EFCoreExamples;
 using MPKDotNetCore.ConsoleApp.HTTPClientExamples;
+using MPKDotNetCore.ConsoleApp.RefitExamples;
+using MPKDotNetCore.ConsoleApp.RestClientExamples;
 using System;
 using System.Threading.Tasks;
 
@@ -23,8 +25,13 @@ namespace MPKDotNetCore.ConsoleApp
 
             Console.WriteLine("waiting for api... ");
             Console.ReadKey();
-            HttpClientExample httpClientExample = new HttpClientExample();
-            await httpClientExample.Run();
+            //HttpClientExample httpClientExample = new HttpClientExample();
+            //await httpClientExample.Run();
+            //RefitExample refitExample = new RefitExample();
+            //await refitExample.Run();
+            RestClientExample restClientExample = new RestClientExample();
+            await restClientExample.Run();
+
         }
     }
 }

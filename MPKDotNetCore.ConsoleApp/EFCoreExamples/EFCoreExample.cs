@@ -20,12 +20,12 @@ namespace MPKDotNetCore.ConsoleApp.EFCoreExamples
         private void Read()
         {
             AppDbContext db = new AppDbContext();
-            var lst=db.Blogs.OrderByDescending(x=>x.BlogId).ToList();   
+            var lst=db.Blogs.OrderByDescending(x=>x.Blog_Id).ToList();   
             foreach(var item in lst)
             {
-                Console.WriteLine(item.BlogTitle);
-                Console.WriteLine(item.BlogAuthor);
-                Console.WriteLine(item.BlogContent);
+                Console.WriteLine(item.Blog_Title);
+                Console.WriteLine(item.Blog_Author);
+                Console.WriteLine(item.Blog_Content);
             }
         }
 
@@ -33,9 +33,9 @@ namespace MPKDotNetCore.ConsoleApp.EFCoreExamples
         {
             BlogDataModel blog = new BlogDataModel()
             {
-                BlogTitle = title,
-                BlogAuthor = author,
-                BlogContent = content
+                Blog_Title = title,
+                Blog_Author = author,
+                Blog_Content = content
             };
 
             AppDbContext db = new AppDbContext();
@@ -48,30 +48,30 @@ namespace MPKDotNetCore.ConsoleApp.EFCoreExamples
         private void Edit(int id)
         {
             AppDbContext db = new AppDbContext();
-            BlogDataModel item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
+            BlogDataModel item = db.Blogs.FirstOrDefault(x => x.Blog_Id == id);
             if (item == null)
             {
                 Console.WriteLine("No data found");
                 return;
             }
 
-            Console.WriteLine(item.BlogTitle);
-            Console.WriteLine(item.BlogAuthor);
-            Console.WriteLine(item.BlogContent);
+            Console.WriteLine(item.Blog_Title);
+            Console.WriteLine(item.Blog_Author);
+            Console.WriteLine(item.Blog_Content);
         }
 
         private void Update(int id,string title,string author,string content)
         {
             AppDbContext db = new AppDbContext();
-            BlogDataModel item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
+            BlogDataModel item = db.Blogs.FirstOrDefault(x => x.Blog_Id == id);
             if (item == null) { 
                 Console.WriteLine("no data found"); 
                 return; 
             }
 
-            item.BlogTitle = title;
-            item.BlogAuthor = author;
-            item.BlogContent = content;
+            item.Blog_Title = title;
+            item.Blog_Author = author;
+            item.Blog_Content = content;
 
             var result=db.SaveChanges();
             string message = result > 0 ? "Update Success" : "Update error";
@@ -82,7 +82,7 @@ namespace MPKDotNetCore.ConsoleApp.EFCoreExamples
         private void Delete(int id)
         {
             AppDbContext db = new AppDbContext();
-            BlogDataModel item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
+            BlogDataModel item = db.Blogs.FirstOrDefault(x => x.Blog_Id == id);
             if (item == null)
             {
                 Console.WriteLine("No data found");
