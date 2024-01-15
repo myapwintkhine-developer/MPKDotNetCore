@@ -38,7 +38,7 @@ public static class BlogService
 
         app.MapGet("/blog/{id}", async ([FromServices] AppDbContext db, int id) =>
         {
-            var blog = await db.Blogs.FindAsync(id);
+            var blog = await db.Blogs.Where(x => x.Blog_Id == id).FirstOrDefaultAsync();
 
             string message = blog == null ? "Blog not found." : "";
             var result = blog == null ? false : true;
@@ -54,7 +54,7 @@ public static class BlogService
 
         app.MapPut("/blog/{id}", async ([FromServices] AppDbContext db, int id, BlogDataModel reqBlog) =>
         {
-            var blog = await db.Blogs.FindAsync(id);
+            var blog = await db.Blogs.Where(x => x.Blog_Id == id).FirstOrDefaultAsync();
 
             if (blog == null)
             {
@@ -79,16 +79,25 @@ public static class BlogService
 
         app.MapPatch("/blog/{id}", async ([FromServices] AppDbContext db, int id, BlogDataModel reqBlog) =>
         {
-            var blog = await db.Blogs.FindAsync(id);
+            var blog = await db.Blogs.Where(x => x.Blog_Id == id).FirstOrDefaultAsync();
 
             if (blog == null)
             {
                 return Results.NotFound("Blog not found.");
             }
 
-            blog.Blog_Title = reqBlog.Blog_Title;
-            blog.Blog_Author = reqBlog.Blog_Author;
-            blog.Blog_Content = reqBlog.Blog_Content;
+            if (!string.IsNullOrWhiteSpace(reqBlog.Blog_Title))
+            {
+                blog.Blog_Title = blog.Blog_Title;
+            }
+            if (!string.IsNullOrWhiteSpace(reqBlog.Blog_Author))
+            {
+                blog.Blog_Author = reqBlog.Blog_Author;
+            }
+            if (!string.IsNullOrWhiteSpace(reqBlog.Blog_Content))
+            {
+                blog.Blog_Content = reqBlog.Blog_Content;
+            }
             int result = await db.SaveChangesAsync();
 
             string message = result > 0 ? "Update Successful." : "Update Failed.";
