@@ -1,4 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<JsonOptions>(options =>
+{
+    options.JsonSerializerOptions.PropertyNameCaseInsensitive = false;
+    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+});
 
 // Add services to the container.
 
