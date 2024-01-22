@@ -23,12 +23,13 @@ public static class BlogService
         .WithName("GetBlogs")
         .WithOpenApi();
 
-        app.MapPost("/blog", async ([FromServices] AppDbContext db, BlogDataModel blog) =>
+        app.MapPost("/blog", async ([FromServices] AppDbContext db, BlogDataModel blog, [FromServices] ILogger<Program> _logger) =>
         {
             await db.Blogs.AddAsync(blog);
             int result = await db.SaveChangesAsync();
-
+            
             string message = result > 0 ? "Saving Successful." : "Saving Failed.";
+            _logger.LogInformation(message);
             return Results.Ok(new BlogResponseModel
             {
                 Data = blog,

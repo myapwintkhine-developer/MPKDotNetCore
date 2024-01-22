@@ -9,6 +9,13 @@ namespace MPKDotNetCore.RestApi.Controllers
     [ApiController]
     public class BlogController : ControllerBase
     {
+        private readonly ILogger<BlogController> _logger;
+
+        public BlogController(ILogger<BlogController> logger)
+        {
+            _logger = logger;
+        }
+
         [HttpGet]
         public IActionResult GetBlogs()
         {
@@ -24,22 +31,43 @@ namespace MPKDotNetCore.RestApi.Controllers
             return Ok(model);
         }
 
+        //[HttpGet("{id}")]
+        //public IActionResult GetBlog(int id)
+        //{
+        //    AppDbContext db = new AppDbContext();
+        //    BlogResponseModel model = new BlogResponseModel();
+        //    var item = db.Blogs.FirstOrDefault(x => x.Blog_Id == id);
+        //    if(item is null)
+        //    {
+        //        model.IsSuccess = false;
+        //        model.Message = "No data found";
+        //        return NotFound(model);
+        //    }
+
+        //    model.IsSuccess = true;
+        //    model.Message = "Success";
+        //    model.Data = item;
+        //    return Ok(model);
+        //}
+
         [HttpGet("{id}")]
         public IActionResult GetBlog(int id)
         {
             AppDbContext db = new AppDbContext();
             BlogResponseModel model = new BlogResponseModel();
             var item = db.Blogs.FirstOrDefault(x => x.Blog_Id == id);
-            if(item is null)
+            if (item is null)
             {
                 model.IsSuccess = false;
                 model.Message = "No data found";
+                _logger.LogWarning(model.Message);
                 return NotFound(model);
             }
 
             model.IsSuccess = true;
             model.Message = "Success";
             model.Data = item;
+            _logger.LogInformation(model.Message);
             return Ok(model);
         }
 

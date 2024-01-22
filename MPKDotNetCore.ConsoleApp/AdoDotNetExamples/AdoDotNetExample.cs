@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using log4net;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,6 +9,8 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
 {
     public class AdoDotNetExample
     {
+        private static readonly ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         private readonly SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder
         {
             DataSource = "DESKTOP-F0KQS1A", //server name (local)
@@ -25,6 +28,7 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
             Create("Hard Times", "Charles Dickens", "Slice of Life");
             Edit(2);
             Update(2, "title6", "author6", "content6");
+            Delete(1);
         }
 
         private void Read()
@@ -130,6 +134,7 @@ namespace MPKDotNetCore.ConsoleApp.AdoDotNetExamples
             connection.Close();
 
             string message = result > 0 ? "Delete successful" : "Delete error";
+            log.Info(message);
             Console.WriteLine(message);
         }
     }

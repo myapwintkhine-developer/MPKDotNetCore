@@ -1,0 +1,7 @@
+2024-01-21 21:04:44.2081 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2024-01-21 21:04:44.2364 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2024-01-21 21:04:44.2364 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2024-01-21 21:04:44.2645 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-01-21 21:04:44.3038 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=D:\ASP.NETTest\Class\MPKDotNetCore\MPKDotNetCore.MinimalApi\bin\Debug\net7.0\NLog.config
+2024-01-21 21:04:44.3325 Info Configuration initialized.
+2024-01-21 21:04:45.1636 Info Validating config: TargetNames=allfile, lifetimeConsole, ownFile-web, ConfigItems=54, FilePath=D:\ASP.NETTest\Class\MPKDotNetCore\MPKDotNetCore.MinimalApi\bin\Debug\net7.0\NLog.config

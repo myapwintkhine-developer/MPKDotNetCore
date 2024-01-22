@@ -1,6 +1,19 @@
+using log4net.Config;
+using log4net.Core;
+using log4net;
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
+
+#region log4net
+var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
+XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
+ILog _logger = LogManager.GetLogger(typeof(LoggerManager));
+#endregion
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Logging.ClearProviders();
+builder.Logging.AddLog4Net();
 
 builder.Services.Configure<JsonOptions>(options =>
 {

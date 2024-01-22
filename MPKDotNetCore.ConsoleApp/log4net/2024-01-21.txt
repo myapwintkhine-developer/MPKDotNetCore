@@ -1,0 +1,9 @@
+2024-01-21 22:16:35,613 [1] INFO  App  
+ Application started... 
+ 
+2024-01-21 22:18:42,973 [1] INFO  App  
+ Application started... 
+ 
+2024-01-21 22:18:43,759 [1] INFO  App  
+ Delete error 
+ 
