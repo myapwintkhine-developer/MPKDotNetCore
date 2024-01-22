@@ -2,6 +2,7 @@
 using MPKDotNetCore.MinimalApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 namespace MPKDotNetCore.MinimalApi.Features.Blog;
 
@@ -9,13 +10,15 @@ public static class BlogService
 {
     public static void AddBlogService(this IEndpointRouteBuilder app)
     {
-        app.MapGet("/blog/{pageNo}/{pageSize}", async ([FromServices] AppDbContext db, int pageNo, int pageSize) =>
+        app.MapGet("/blog/{pageNo}/{pageSize}", async ([FromServices] AppDbContext db, [FromServices] ILogger<Program> _logger, int pageNo, int pageSize) =>
         {
-            return await db.Blogs
+            var lst = await db.Blogs
                 .AsNoTracking()
                 .Skip((pageNo - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
+            _logger.LogInformation("Blog List => " + JsonSerializer.Serialize(lst));
+            return lst;
         })
         .WithName("GetBlogs")
         .WithOpenApi();
