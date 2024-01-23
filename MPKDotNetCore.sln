@@ -19,11 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.ATMWebApp", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.LoginWebApp", "MPKDotNetCore.LoginWebApp\MPKDotNetCore.LoginWebApp.csproj", "{0A2E3097-369F-48C5-9C03-09B0CCA2475B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.LoggingConsoleApp", "MPKDotNetCore.LoggingConsoleApp\MPKDotNetCore.LoggingConsoleApp.csproj", "{D822A6BE-FE2B-491D-91FF-584B312AC55A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.LoggingConsoleApp", "MPKDotNetCore.LoggingConsoleApp\MPKDotNetCore.LoggingConsoleApp.csproj", "{D822A6BE-FE2B-491D-91FF-584B312AC55A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.DbFirstCommandApp", "MPKDotNetCore.DbFirstCommandApp\MPKDotNetCore.DbFirstCommandApp.csproj", "{4489C552-A6C2-4B90-B57E-9502CF0049F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.DbFirstCommandApp", "MPKDotNetCore.DbFirstCommandApp\MPKDotNetCore.DbFirstCommandApp.csproj", "{4489C552-A6C2-4B90-B57E-9502CF0049F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.SignalRChatApp", "MPKDotNetCore.SignalRChatApp\MPKDotNetCore.SignalRChatApp.csproj", "{1EBB90B5-8462-4DA7-BA32-A03C572A0ED6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MPKDotNetCore.SignalRChatApp", "MPKDotNetCore.SignalRChatApp\MPKDotNetCore.SignalRChatApp.csproj", "{1EBB90B5-8462-4DA7-BA32-A03C572A0ED6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPKDotNetCore.ShoppingCartMvcApp", "MPKDotNetCore.ShoppingCartMvcApp\MPKDotNetCore.ShoppingCartMvcApp.csproj", "{6753EE1E-43BF-4917-B222-BA5A8A1B6789}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{1EBB90B5-8462-4DA7-BA32-A03C572A0ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EBB90B5-8462-4DA7-BA32-A03C572A0ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EBB90B5-8462-4DA7-BA32-A03C572A0ED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6753EE1E-43BF-4917-B222-BA5A8A1B6789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6753EE1E-43BF-4917-B222-BA5A8A1B6789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6753EE1E-43BF-4917-B222-BA5A8A1B6789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6753EE1E-43BF-4917-B222-BA5A8A1B6789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

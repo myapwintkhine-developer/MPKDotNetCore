@@ -7,11 +7,15 @@ using Serilog;
 using Serilog.Sinks.MSSqlServer;
 using NLog.Web;
 using NLog;
+using System.Reflection;
+
+Assembly assembly = Assembly.GetExecutingAssembly();
+string projectName = assembly.GetName().Name!;
 
 #region serilog
 //Log.Logger = new LoggerConfiguration()
 //    .WriteTo.Console()
-//    .WriteTo.File("logs/myapp.txt", rollingInterval: RollingInterval.Hour, fileSizeLimitBytes: 1024)
+//    .WriteTo.File("logs/projectName.txt", rollingInterval: RollingInterval.Hour, fileSizeLimitBytes: 1024)
 //    .WriteTo
 //          .MSSqlServer(
 //           connectionString: "Server=.;Database=TestDb;User ID=sa;Password=sasa;TrustServerCertificate=True;",

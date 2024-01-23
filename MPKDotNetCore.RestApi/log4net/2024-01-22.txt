@@ -1,0 +1,18 @@
+2024-01-22 16:28:46,813 [1] INFO  App  
+ Now listening on: https://localhost:7298 
+ 
+2024-01-22 16:28:46,823 [1] INFO  App  
+ Now listening on: http://localhost:5133 
+ 
+2024-01-22 16:28:46,826 [1] INFO  App  
+ Application started. Press Ctrl+C to shut down. 
+ 
+2024-01-22 16:28:46,827 [1] INFO  App  
+ Hosting environment: Development 
+ 
+2024-01-22 16:28:46,828 [1] INFO  App  
+ Content root path: D:\ASP.NETTest\Class\MPKDotNetCore\MPKDotNetCore.RestApi 
+ 
+2024-01-22 16:29:42,579 [10] WARN  App  
+ No data found 
+ 

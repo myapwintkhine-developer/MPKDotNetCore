@@ -47,7 +47,11 @@ var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
 XmlConfigurator.Configure(logRepository, new FileInfo("log4net.config"));
 ILog _logger = LogManager.GetLogger(typeof(LoggerManager));
 
+Console.WriteLine("Before log statements");
+Console.ReadLine();
 _logger.Info("Testing information log");
 _logger.Debug("Testing Debug log");
 _logger.Fatal("Testing Fatal log");
+Console.WriteLine("After log statements");
+
 #endregion
